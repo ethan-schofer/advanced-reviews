@@ -17,7 +17,7 @@ function ZipCurrentModule
 msbuild /p:Configuration=Release
 npm run build --prefix ./src/ui
 
-$fullVersion=[System.Reflection.Assembly]::LoadFrom("src\alloy\bin\AdvancedApprovalReviews.dll").GetName().Version
+$fullVersion=[System.Reflection.Assembly]::LoadFrom("$workingDirectory\src\alloy\bin\AdvancedApprovalReviews.dll").GetName().Version
 $version="$($fullVersion.major).$($fullVersion.minor).$($fullVersion.build)"
 Write-Host "Creating nuget with $version version"
 
